@@ -3,26 +3,41 @@
 # Putty에서 색표현이 제대로 안될 때
 #https://superuser.com/questions/335471/using-colour-schemes-with-vim-and-putty
 
-echo "INSTALL"
+echo -e "\n---------------\n"
+echo -e "Package Update & Upgrade\n"
 
 sudo apt-get update && sudo apt-get upgrade
 
-echo "\n\nclang&ctags"
+echo -e "\n---------------\n"
+echo -e "clang&ctags\n"
 sudo apt-get install clang && sudo apt-get install ctags
 
-echo "\n\nwget"
+echo -e "\n---------------\n"
+echo -e "wget\n"
 sudo apt-get install wget
 
+echo -e "\n---------------\n"
+echo -e "build-essential\n"
 sudo apt-get install build-essential
 
-echo "\n\nVim"
+echo -e "\n---------------\n"
+echo -e "Vim\n"
 sudo apt-get install vim
 
-echo "\n\nVimrc"
+echo -e "\n---------------\n"
+echo -e "Vimrc\n"
 mv .vim* $HOME/
 
-echo "\n\nVim Plugin"
+echo -e "\n---------------\n"
+echo -e "Vim Vundle\n"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-echo "\n\nAutoremove"
+echo -e "\n---------------\n"
+echo -e "Jellybeans Vim Color\n"
+mkdir -p ~/.vim/colors
+cd ~/.vim/colors
+curl -O https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim
+
+echo -e "\n---------------\n"
+echo -e "Autoremove\n"
 sudo apt-get autoremove
